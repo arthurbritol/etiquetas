@@ -4,64 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Volume</title>
-        <style>
-            body {
-                font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-                margin: 0;
-                padding: 20px;
-                background-color: #f9f9f9;
-                color: #222;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                min-height: calc(100vh - 40px);
-            }
-            .sheet {
-                background-color: #ffffff;
-                width: 100%;
-                max-width: 800px;
-                padding: 50px;
-                border-radius: 6px;
-            }
-            h1 {
-                font-size: 26px;
-                font-weight: 900;
-                color: #000;
-                text-align: center;
-                padding-bottom: 15px;
-                margin-top: 0;
-                margin-bottom: 40px;
-                border-bottom: 2px solid #222;
-            }
-            .info-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 30px 25px;
-            }
-            .info-item {
-                padding: 0;
-            }
-            .info-item strong {
-                display: block;
-                font-size: 14px;
-                color: #888;
-                margin-bottom: 6px;
-                text-transform: uppercase;
-                font-weight: 700;
-            }
-            .info-item span {
-                font-size: 19px;
-                color: #222;
-                font-weight: 400;
-                word-wrap: break-word;
-            }
-            .footer {
-                text-align: center;
-                margin-top: 50px;
-                font-size: 12px;
-                color: #ccc;
-            }
-        </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap');
+    
+        :root {
+            --background-dark: #1a202c; /* Azul escuro/Chumbo */
+            --surface-color: #2d3748;   /* Cinza azulado para os cards */
+            --primary-accent: #38b2ac;  /* Verde-água/Turquesa */
+            --primary-gradient: linear-gradient(90deg, #38b2ac, #319795);
+            --text-primary: #edf2f7;    /* Branco suave */
+            --text-secondary: #a0aec0; /* Cinza claro para rótulos */
+            --border-color: #4a5568;
+        }
+    
+        body {
+            font-family: 'Titillium Web', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--background-dark);
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 40px);
+        }
+    
+        .sheet {
+            width: 100%;
+            max-width: 800px;
+            background-color: var(--surface-color);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+        }
+    
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0 0 35px 0;
+            padding-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+    
+        .info-item {
+            background-color: transparent;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-accent);
+            transition: background-color 0.2s ease-in-out;
+        }
+        
+        .info-item:hover {
+            background-color: rgba(74, 85, 104, 0.4);
+        }
+    
+        .info-item strong {
+            display: block;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+        }
+    
+        .info-item span {
+            font-size: 20px;
+            color: var(--text-primary);
+            font-weight: 600;
+            word-wrap: break-word;
+        }
+        
+        /* Destaque para o primeiro item */
+        .info-item:first-child {
+            grid-column: 1 / -1; /* Ocupa a largura toda */
+            text-align: center;
+            border-left: none;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .info-item:first-child span {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+    
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            opacity: 0.6;
+        }
+    </style>
 </head>
 <body>
     <div class="sheet">
@@ -95,4 +143,5 @@
 </body>
 
 </html>
+
 
